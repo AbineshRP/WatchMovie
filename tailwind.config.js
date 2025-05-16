@@ -7,20 +7,14 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
-      colors:{
-        "primary": "#030014",
-        "secondary": "#151312",
-        light:{
-          100: "#D6C6FF",
-          200: "#A8B5DB",
-          300: "#9CA4AB",
+      colors: {
+        primary: "#289c8e",
+        secondary: "#ceece8",
+        light: {
+          100: "#eefbfa",
         },
-        dark:{
-          100: "#221F3D",
-          200: "#0F0D23",
-        }
-      }
+      },
     },
   },
   plugins: [],
-}
+};

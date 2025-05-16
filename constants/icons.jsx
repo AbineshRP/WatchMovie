@@ -1,0 +1,13 @@
+export const icons = {
+    home: require("@/assets/icons/homeActive.png"),
+    profile: require("@/assets/icons/profile.png"),
+    medicines: require("@/assets/icons/medicines.png"),
+    appointment: require("@/assets/icons/appointment.png"),
+    bell: require("@/assets/icons/bellIcon.png"),
+    cart : require("@/assets/icons/cartIcon.png"),
+    location : require("@/assets/icons/locationIcon.png"),
+    stethoscope : require("@/assets/icons/stethoscopeIcon.png"),
+    call : require("@/assets/icons/callIcon.png"),
+    calender : require("@/assets/icons/calendarIcon.png"),
+    clock : require("@/assets/icons/clockIcon.png"),
+};
