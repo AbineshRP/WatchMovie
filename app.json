@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "WatchMovie",
-    "slug": "WatchMovie",
+    "name": "MediDoor",
+    "slug": "MediDoor",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icons/MediDoorLogo.png",
-    "scheme": "watchmovie",
+    "scheme": "MediDoor",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -16,7 +16,8 @@
         "foregroundImage": "./assets/icons/MediDoorLogo.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.abineshrp1234.WatchMovie"
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +38,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "6b6ae952-6970-4b18-9e12-9460250e5d8c"
+      }
     }
   }
 }

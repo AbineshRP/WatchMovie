@@ -4,7 +4,7 @@ import Content from "./Content";
 
 const AppGradient = ({ children, colors }) => {
   return (
-    <LinearGradient colors={colors} style={{ flex: 1 , paddingHorizontal: 10}}>
+    <LinearGradient colors={colors} style={{ flex: 1 }}>
         <Content>{children}</Content>
     </LinearGradient>
   );

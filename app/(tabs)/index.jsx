@@ -1,24 +1,40 @@
 import AppGradient from "@/component/AppGradient";
+import SearchBox from "@/component/SearchBox";
 import TopBar from "@/component/TopBar";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import { StatusBar } from "expo-status-bar";
-import { Image, Pressable, ScrollView, Text, View } from "react-native";
+import {
+  Image,
+  Pressable,
+  ScrollView,
+  Text,
+  View,
+  Dimensions,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 const Home = () => {
+  const { height } = Dimensions.get("screen");
+
   return (
     <AppGradient colors={["#c5f0ec", "#fafafa", "#fafafa"]}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <SafeAreaView style={{ flex: 1 }}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 20 }}
+      >
+        <SafeAreaView className="flex-1">
           <View className="flex-1">
             {/*********************************************** Header *****************************************/}
             <TopBar />
             {/*********************************************** Search *****************************************/}
+            <SearchBox />
             {/*********************************************** Slider *****************************************/}
-            <View className="my-5 mx-1">
+            <View className="mb-5 mx-1">
               <Image
                 source={images.sliderImg1}
-                className="w-full object-contain h-[150px] rounded-2xl"
+                 style={{ height: height * 0.14}}
+                className={`rounded-2xl w-full
+                }] object-contain`}
               />
             </View>
             {/*********************************************** Category *****************************************/}
@@ -43,7 +59,7 @@ const Home = () => {
             </View>
             {/***********************************************Appointment*****************************************/}
             <View
-              className="bg-light-100 mt-6 px-5 py-8"
+              className="bg-light-100 mt-6 px-5 pt-8 pb-16"
               style={{
                 borderTopLeftRadius: 40,
                 borderTopRightRadius: 40,

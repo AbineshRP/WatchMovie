@@ -3,7 +3,7 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 const TopBar = () => {
   return (
-    <View className="flex-row justify-between items-center mx-2">
+    <View className="flex-row justify-between items-center mx-2 mb-5">
       <View className="flex-row items-center gap-3">
         <Image source={icons.location} tintColor={"#000"} className="size-8" />
         <View>

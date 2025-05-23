@@ -1,8 +1,9 @@
 import AppGradient from "@/component/AppGradient";
+import SearchBox from "@/component/SearchBox";
 import TopBar from "@/component/TopBar";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   FlatList,
   Image,
@@ -87,116 +88,129 @@ const Medicines = () => {
   return (
     <AppGradient colors={["#eaf9f8", "#eaf9f8", "#fafafa"]}>
       <SafeAreaView className="flex-1">
-        <TopBar />
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{ paddingHorizontal: 0, paddingTop: 20 }}
-        >
-          <View className="flex-row justify-between gap-5 mb-3">
-            <Pressable
-              onPress={() => handleclick("all")}
-              className={`flex flex-row items-center justify-center px-10 py-4 rounded-full ${
-                categorie === "all" ? "bg-primary" : "bg-white"
-              }`}
-              style={{ boxShadow: "0px 0px 10px rgba(0,0,0,.1)" }}
-            >
-              <Text
-                className={`font-semibold text-xl ${
-                  categorie === "all" ? "text-white" : "text-dark-100"
+        <View className="mb-2">
+          <TopBar />
+          <SearchBox />
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <View className="flex-row justify-between gap-4 py-2">
+              <Pressable
+                onPress={() => handleclick("all")}
+                className={`flex flex-row items-center justify-center rounded-full ${
+                  categorie === "all" ? "bg-primary" : "bg-white"
                 }`}
+                style={{ boxShadow: "0px 0px 10px rgba(0,0,0,.1)" }}
               >
-                All
-              </Text>
-            </Pressable>
-            <Pressable
-              onPress={() => handleclick("Cardiology")}
-              className={`flex flex-row items-center justify-center px-10 py-3 rounded-full ${
-                categorie === "Cardiology" ? "bg-primary" : "bg-white"
-              }`}
-              style={{ boxShadow: "0px 0px 10px rgba(0,0,0,.1)" }}
-            >
-              <Image
-                source={images.heart}
-                resizeMode="contain"
-                className="size-10 mr-3"
-              />
-              <Text
-                className={`font-semibold text-xl ${
-                  categorie === "Cardiology" ? "text-white" : "text-dark-100"
+                <View className="d-flex flex-row items-center justify-center px-10 py-2">
+                  <Text
+                    className={`font-semibold  text-xl  ${
+                      categorie === "all" ? "text-white" : "text-gray-500"
+                    }`}
+                  >
+                    All
+                  </Text>
+                </View>
+              </Pressable>
+              <Pressable
+                onPress={() => handleclick("Cardiology")}
+                className={`flex flex-row items-center justify-center rounded-full ${
+                  categorie === "Cardiology" ? "bg-primary" : "bg-white"
                 }`}
+                style={{ boxShadow: "0px 0px 10px rgba(0,0,0,.1)" }}
               >
-                Cardiology
-              </Text>
-            </Pressable>
-            <Pressable
-              onPress={() => handleclick("Neurology")}
-              className={`flex flex-row items-center justify-center px-10 py-3 rounded-full ${
-                categorie === "Neurology" ? "bg-primary" : "bg-white"
-              }`}
-              style={{ boxShadow: "0px 0px 10px rgba(0,0,0,.1)" }}
-            >
-              <Image
-                source={images.neurology}
-                resizeMode="contain"
-                className="size-10 mr-3"
-              />
-              <Text
-                className={`font-semibold text-xl ${
-                  categorie === "Neurology" ? "text-white" : "text-dark-100"
+                <View className="d-flex flex-row items-center justify-center px-5 py-2">
+                  <Image
+                    source={images.heart}
+                    resizeMode="contain"
+                    className="size-10 mr-3"
+                  />
+                  <Text
+                    className={`font-semibold  text-xl ${
+                      categorie === "Cardiology"
+                        ? "text-white"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    Cardiology
+                  </Text>
+                </View>
+              </Pressable>
+              <Pressable
+                onPress={() => handleclick("Neurology")}
+                className={`flex flex-row items-center justify-center rounded-full ${
+                  categorie === "Neurology" ? "bg-primary" : "bg-white"
                 }`}
+                style={{ boxShadow: "0px 0px 10px rgba(0,0,0,.1)" }}
               >
-                Neurology
-              </Text>
-            </Pressable>
-            <Pressable
-              onPress={() => handleclick("Pediatrics")}
-              className={`flex flex-row items-center justify-center px-10 py-3 rounded-full ${
-                categorie === "Pediatrics" ? "bg-primary" : "bg-white"
-              }`}
-              style={{ boxShadow: "0px 0px 10px rgba(0,0,0,.1)" }}
-            >
-              <Image
-                source={images.pediatrics}
-                resizeMode="contain"
-                className="size-10 mr-3"
-              />
-              <Text
-                className={`font-semibold text-xl ${
-                  categorie === "Pediatrics" ? "text-white" : "text-dark-100"
+                <View className="d-flex flex-row items-center justify-center px-5 py-2">
+                  <Image
+                    source={images.neurology}
+                    resizeMode="contain"
+                    className="size-10 mr-3"
+                  />
+                  <Text
+                    className={`font-semibold  text-xl ${
+                      categorie === "Neurology" ? "text-white" : "text-gray-500"
+                    }`}
+                  >
+                    Neurology
+                  </Text>
+                </View>
+              </Pressable>
+              <Pressable
+                onPress={() => handleclick("Pediatrics")}
+                className={`flex flex-row items-center justify-center rounded-full ${
+                  categorie === "Pediatrics" ? "bg-primary" : "bg-white"
                 }`}
+                style={{ boxShadow: "0px 0px 10px rgba(0,0,0,.1)" }}
               >
-                Pediatrics
-              </Text>
-            </Pressable>
-            <Pressable
-              onPress={() => handleclick("Dental")}
-              className={`flex flex-row items-center justify-center px-10 py-3 rounded-full ${
-                categorie === "Dental" ? "bg-primary" : "bg-white"
-              }`}
-              style={{ boxShadow: "0px 0px 10px rgba(0,0,0,.1)" }}
-            >
-              <Image
-                source={images.dental}
-                resizeMode="contain"
-                className="size-10 mr-3"
-              />
-              <Text
-                className={`font-semibold text-xl ${
-                  categorie === "Dental" ? "text-white" : "text-dark-100"
+                <View className="d-flex flex-row items-center justify-center px-5 py-2">
+                  <Image
+                    source={images.pediatrics}
+                    resizeMode="contain"
+                    className="size-10 mr-3"
+                  />
+                  <Text
+                    className={`font-semibold  text-xl ${
+                      categorie === "Pediatrics"
+                        ? "text-white"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    Pediatrics
+                  </Text>
+                </View>
+              </Pressable>
+              <Pressable
+                onPress={() => handleclick("Dental")}
+                className={`flex flex-row items-center justify-center rounded-full ${
+                  categorie === "Dental" ? "bg-primary" : "bg-white"
                 }`}
+                style={{ boxShadow: "0px 0px 10px rgba(0,0,0,.1)" }}
               >
-                Dental
-              </Text>
-            </Pressable>
-          </View>
-        </ScrollView>
+                <View className="d-flex flex-row items-center justify-center px-5 py-2">
+                  <Image
+                    source={images.dental}
+                    resizeMode="contain"
+                    className="size-10 mr-3"
+                  />
+                  <Text
+                    className={`font-semibold  text-xl ${
+                      categorie === "Dental" ? "text-white" : "text-gray-500"
+                    }`}
+                  >
+                    Dental
+                  </Text>
+                </View>
+              </Pressable>
+            </View>
+          </ScrollView>
+        </View>
 
         <FlatList
           data={medicineList}
           keyExtractor={(item) => item.id.toString()}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingBottom: 160 }}
+          contentContainerStyle={{ paddingBottom: 70 }}
           ListHeaderComponent={() => (
             <>
               <View className="bg-secondary my-5 rounded-xl p-5 flex flex-row items-center justify-between border-2 border-solid border-primary">
