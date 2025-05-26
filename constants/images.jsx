@@ -7,5 +7,9 @@ export const images ={
     neurology : require("@/assets/images/neurology.png"),
     pediatrics : require("@/assets/images/pediatrics.png"),
     tablet : require("@/assets/images/tablet.png"),
-
+    hospital : require("@/assets/images/hospital.png"),
+    profile : require("@/assets/images/profile.png"),
+    underline: require("@/assets/images/underline.png"),
+    doctor : require("@/assets/images/doctor.png"),
+    loginHero : require("@/assets/images/loginHero.png"),
 }
