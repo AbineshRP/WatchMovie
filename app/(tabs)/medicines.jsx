@@ -15,11 +15,8 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Medicines = () => {
-  const [categorie, setCategories] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const handleclick = (category) => {
-    setCategories(category);
-  };
   const medicineList = [
     {
       id: 1,
@@ -78,20 +75,48 @@ const Medicines = () => {
       image: images.tablet,
     },
   ];
-  const categories = [
-    { id: "all", title: "All", image: null },
-    { id: "cardiology", title: "Cardiology", image: images.heart },
-    { id: "neurology", title: "Neurology", image: images.neurology },
-    { id: "pediatrics", title: "Pediatrics", image: images.pediatrics },
-    { id: "dental", title: "Dental", image: images.dental },
-  ];
+
+  const query = (searchQuery || "").toLowerCase();
+
+  const filteredData = medicineList.filter((item) => {
+    return item.name.toLowerCase().includes(query);
+  });
+  const [addedMedicines, setAddedMedicines] = useState({});
+
+  // Add handler
+  const handleAddMedicine = (id) => {
+    setAddedMedicines((prev) => ({
+      ...prev,
+      [id]: (prev[id] || 0) + 1,
+    }));
+  };
+
+  // Subtract handler
+  const handleRemoveMedicine = (id) => {
+    setAddedMedicines((prev) => {
+      const newQuantity = (prev[id] || 0) - 1;
+      if (newQuantity <= 0) {
+        const newState = { ...prev };
+        delete newState[id];
+        return newState;
+      }
+      return {
+        ...prev,
+        [id]: newQuantity,
+      };
+    });
+  };
+
   return (
     <AppGradient colors={["#eaf9f8", "#eaf9f8", "#fafafa"]}>
       <SafeAreaView className="flex-1">
         <View className="mb-2">
           <TopBar />
-          <SearchBox />
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <SearchBox
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
+          {/* <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <View className="flex-row justify-between gap-4 py-2">
               <Pressable
                 onPress={() => handleclick("all")}
@@ -203,11 +228,10 @@ const Medicines = () => {
                 </View>
               </Pressable>
             </View>
-          </ScrollView>
+          </ScrollView> */}
         </View>
-
         <FlatList
-          data={medicineList}
+          data={filteredData}
           keyExtractor={(item) => item.id.toString()}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ paddingBottom: 70 }}
@@ -244,9 +268,32 @@ const Medicines = () => {
                   <Text className="text-lg"> ₹{item.price}</Text>
                 </View>
               </View>
-              <Pressable className="bg-secondary py-3 px-5 rounded-lg border-2 border-primary">
-                <Text className="text-primary font-bold">Add</Text>
-              </Pressable>
+              {addedMedicines[item.id] ? (
+                <View className="flex-row items-center gap-3">
+                  <Pressable
+                    className="bg-primary px-3 py-2 rounded-lg"
+                    onPress={() => handleRemoveMedicine(item.id)}
+                  >
+                    <Text className="text-white font-bold">-</Text>
+                  </Pressable>
+                  <Text className="text-lg text-center">
+                    {addedMedicines[item.id]}
+                  </Text>
+                  <Pressable
+                    className="bg-primary px-3 py-2 rounded-lg"
+                    onPress={() => handleAddMedicine(item.id)}
+                  >
+                    <Text className="text-white font-bold">+</Text>
+                  </Pressable>
+                </View>
+              ) : (
+                <Pressable
+                  className="bg-secondary py-3 px-5 rounded-lg border-2 border-primary"
+                  onPress={() => handleAddMedicine(item.id)}
+                >
+                  <Text className="text-primary font-bold">Add</Text>
+                </Pressable>
+              )}
             </View>
           )}
         />

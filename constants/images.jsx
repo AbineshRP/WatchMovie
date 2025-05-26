@@ -11,4 +11,5 @@ export const images ={
     profile : require("@/assets/images/profile.png"),
     underline: require("@/assets/images/underline.png"),
     doctor : require("@/assets/images/doctor.png"),
+    loginHero : require("@/assets/images/loginHero.png"),
 }

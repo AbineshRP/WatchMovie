@@ -1,8 +1,9 @@
 import { icons } from "@/constants/icons";
-import React from "react";
-import { Image, Text, View } from "react-native";
+import React, { useState } from "react";
+import { Image, Text, View, TextInput } from "react-native";
 
-const SearchBox = () => {
+const SearchBox = ({searchQuery , setSearchQuery }) => {
+
   return (
     <View
       className="w-full p-5 mb-5 bg-white rounded-md flex-row items-center "
@@ -12,11 +13,24 @@ const SearchBox = () => {
     >
       <View className="flex flex-row items-center justify-between flex-1">
         <Image source={icons.search} />
-        <Text style={{ color: "#6e6e6e" }}>
-          Search for medicines, doctors, hospitals...
-        </Text>
-        <Image source={icons.line}/>
-        <Image source={icons.filter}/>
+        <TextInput
+          style={{
+            backgroundColor: "#fff",
+            flex: 1,
+            borderRadius: 10,
+            flexDirection: "row",
+            alignItems: "start",
+            paddingHorizontal: 15,
+            color: "#000",
+          }}
+          value={searchQuery}
+          onChangeText={setSearchQuery}
+          placeholder="Search for medicines, doctors, hospitals..."
+           placeholderTextColor="#7e7e7e"
+           keyboardType="default"
+        />
+        <Image source={icons.line} style={{ marginHorizontal: 10 }} />
+        <Image source={icons.filter} />
       </View>
     </View>
   );

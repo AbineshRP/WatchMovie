@@ -19,6 +19,8 @@ const Appointment = () => {
   const handleclick = (category) => {
     setCategories(category);
   };
+  const [searchQuery, setSearchQuery] = useState("");
+
   const DoctorList = [
     {
       id: 1,
@@ -101,8 +103,20 @@ const Appointment = () => {
       image: images.doctor,
     },
   ];
+  const categoryFiltered =
+    categorie === "all"
+      ? DoctorList
+      : DoctorList.filter((doctor) => doctor.type === categorie);
 
-const filteredDoctors = categorie === "all" ? DoctorList : DoctorList.filter((doctor) => doctor.type === categorie);
+  const query = (searchQuery || "").toLowerCase();
+  const filteredDoctors = categoryFiltered.filter((doctor) => {
+    return (
+      doctor.name.toLowerCase().includes(query) ||
+      doctor.spesialist.toLowerCase().includes(query) ||
+      doctor.hospital.toLowerCase().includes(query) ||
+      doctor.type.toLowerCase().includes(query)
+    );
+  });
 
   const handleLike = (id) => {
     setLiked((prevLiked) => ({
@@ -115,7 +129,10 @@ const filteredDoctors = categorie === "all" ? DoctorList : DoctorList.filter((do
       <SafeAreaView className="flex-1">
         <View className="mb-2">
           <TopBar />
-          <SearchBox />
+          <SearchBox
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <View className="flex-row justify-between gap-4 py-2">
               <Pressable
@@ -243,16 +260,14 @@ const filteredDoctors = categorie === "all" ? DoctorList : DoctorList.filter((do
                   <Text className="font-semibold text-xl  capitalize">
                     {item.name}
                   </Text>
-                  <Text className="text-lg text-neutral-600">
-                    {item.type}
-                  </Text>
+                  <Text className="text-lg text-neutral-600">{item.type}</Text>
                   <Text className="text-lg text-primary">{item.hospital}</Text>
                   <View className="flex-row gap-2 ">
                     <Text className="text-lg text-neutral-600">
                       ⭐ {item.rating}
                     </Text>
                     <Text className="text-lg text-neutral-600">
-                      ⭐ {item.exprerience}
+                      | {item.exprerience}
                     </Text>
                   </View>
                 </View>

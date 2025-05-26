@@ -5,16 +5,16 @@ import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import { StatusBar } from "expo-status-bar";
 import {
+  Dimensions,
   Image,
   Pressable,
   ScrollView,
   Text,
   View,
-  Dimensions,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 const Home = () => {
-  const { height } = Dimensions.get("screen");
+  const { height, width } = Dimensions.get("screen");
 
   return (
     <AppGradient colors={["#c5f0ec", "#fafafa", "#fafafa"]}>
@@ -29,26 +29,24 @@ const Home = () => {
             {/*********************************************** Search *****************************************/}
             <SearchBox />
             {/*********************************************** Slider *****************************************/}
-            <View className="mb-5 mx-1">
+            <View className="mb-5 flex items-center mx-auto">
               <Image
                 source={images.sliderImg1}
-                 style={{ height: height * 0.14}}
-                className={`rounded-2xl w-full
-                }] object-contain`}
+                style={{ height: height * 0.16, width: width - 10 }}
+                className="rounded-2xl object-contain"
               />
             </View>
             {/*********************************************** Category *****************************************/}
-            <View className="bg-secondary mx-1 rounded-xl py-5 flex flex-row items-center justify-center gap-2">
-              <View className="flex-row gap-2">
+            <View className="bg-secondary rounded-xl py-5 flex flex-row items-center justify-between px-4">
+              <View className="flex-row items-center gap-2">
                 <Image
                   source={icons.stethoscope}
-                  className="size-14 object-contain"
+                  size={36}
+                  className="object-contain"
                 />
                 <View className="flex">
-                  <Text className="font-semibold text-lg">
-                    Get The Right Medicine
-                  </Text>
-                  <Text className="text-lg">Talk to a doctor at No-cost</Text>
+                  <Text className="font-semibold">Get The Right Medicine</Text>
+                  <Text className="">Talk to a doctor at No-cost</Text>
                 </View>
               </View>
               <View>
@@ -87,13 +85,13 @@ const Home = () => {
                     </Pressable>
                   </View>
                 </View>
-                <View className="flex-row  items-center gap-3 mt-3 px-3">
+                <View className="flex-row  items-center gap-2 mt-3 px-3">
                   <Image source={icons.calender} />
-                  <Text className="text-white font-semibold text-lg">
+                  <Text className="text-white font-semibold">
                     Monday, 1 May
                   </Text>
                   <Image source={icons.clock} />
-                  <Text className="text-white font-semibold text-lg">
+                  <Text className="text-white font-semibold">
                     09:00 - 10:30
                   </Text>
                 </View>
