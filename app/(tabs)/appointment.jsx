@@ -13,7 +13,9 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useRouter } from "expo-router";
 const Appointment = () => {
+  const router = useRouter();
   const [categorie, setCategories] = useState("all");
   const [liked, setLiked] = useState(false);
   const handleclick = (category) => {
@@ -31,6 +33,8 @@ const Appointment = () => {
       rating: 4.7,
       exprerience: "10 years",
       image: images.doctor,
+      about:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
     },
     {
       id: 2,
@@ -41,6 +45,8 @@ const Appointment = () => {
       rating: 4.6,
       exprerience: "12 years",
       image: images.doctor,
+      about:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
     },
     {
       id: 3,
@@ -51,6 +57,8 @@ const Appointment = () => {
       rating: 4.8,
       exprerience: "8 years",
       image: images.doctor,
+      about:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
     },
     {
       id: 4,
@@ -61,6 +69,8 @@ const Appointment = () => {
       rating: 4.5,
       exprerience: "7 years",
       image: images.doctor,
+      about:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
     },
     {
       id: 5,
@@ -71,6 +81,8 @@ const Appointment = () => {
       rating: 4.9,
       exprerience: "15 years",
       image: images.doctor,
+      about:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
     },
     {
       id: 6,
@@ -81,6 +93,8 @@ const Appointment = () => {
       rating: 4.4,
       exprerience: "6 years",
       image: images.doctor,
+      about:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
     },
     {
       id: 7,
@@ -91,6 +105,8 @@ const Appointment = () => {
       rating: 4.3,
       exprerience: "9 years",
       image: images.doctor,
+      about:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
     },
     {
       id: 8,
@@ -101,6 +117,8 @@ const Appointment = () => {
       rating: 4.8,
       exprerience: "14 years",
       image: images.doctor,
+      about:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
     },
   ];
   const categoryFiltered =
@@ -123,6 +141,15 @@ const Appointment = () => {
       ...prevLiked,
       [id]: !prevLiked[id],
     }));
+  };
+  const handleDoctorPress = (doctor) => {
+    router.push({
+      pathname: "/doctor/[id]",
+      params: {
+        id: doctor.id.toString(),
+        doctor: JSON.stringify(doctor),
+      },
+    });
   };
   return (
     <AppGradient colors={["#c5f0ec", "#eaf9f8", "#fafafa"]}>
@@ -253,37 +280,43 @@ const Appointment = () => {
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ paddingBottom: 70 }}
           renderItem={({ item }) => (
-            <View className="bg-white px-6 py-4 rounded-2xl flex flex-row items-start justify-between my-3">
-              <View className="flex-row gap-3 justify-center items-center">
-                <Image source={item.image} className="size-28 rounded-md" />
-                <View>
-                  <Text className="font-semibold text-xl  capitalize">
-                    {item.name}
-                  </Text>
-                  <Text className="text-lg text-neutral-600">{item.type}</Text>
-                  <Text className="text-lg text-primary">{item.hospital}</Text>
-                  <View className="flex-row gap-2 ">
-                    <Text className="text-lg text-neutral-600">
-                      ⭐ {item.rating}
+            <Pressable onPress={() => handleDoctorPress(item)}>
+              <View className="bg-white px-6 py-4 rounded-2xl flex flex-row items-start justify-between my-3">
+                <View className="flex-row gap-3 justify-center items-center">
+                  <Image source={item.image} className="size-28 rounded-md" />
+                  <View>
+                    <Text className="font-semibold text-xl  capitalize">
+                      {item.name}
                     </Text>
                     <Text className="text-lg text-neutral-600">
-                      | {item.exprerience}
+                      {item.type}
                     </Text>
+                    <Text className="text-lg text-primary">
+                      {item.hospital}
+                    </Text>
+                    <View className="flex-row gap-2 ">
+                      <Text className="text-lg text-neutral-600">
+                        ⭐ {item.rating}
+                      </Text>
+                      <Text className="text-lg text-neutral-600">
+                        | {item.exprerience}
+                      </Text>
+                    </View>
                   </View>
                 </View>
+                <Pressable
+                  className="py-3 px-5"
+                  style={{ cursor: "pointer" }}
+                  onPress={() => handleLike(item.id)}
+                >
+                  {liked[item.id] ? (
+                    <AntDesign name="heart" size={24} color="#fc6392" />
+                  ) : (
+                    <AntDesign name="hearto" size={24} color="black" />
+                  )}
+                </Pressable>
               </View>
-              <Pressable
-                className="py-3 px-5"
-                style={{ cursor: "pointer" }}
-                onPress={() => handleLike(item.id)}
-              >
-                {liked[item.id] ? (
-                  <AntDesign name="heart" size={24} color="#fc6392" />
-                ) : (
-                  <AntDesign name="hearto" size={24} color="black" />
-                )}
-              </Pressable>
-            </View>
+            </Pressable>
           )}
         />
       </SafeAreaView>

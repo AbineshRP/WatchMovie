@@ -20,9 +20,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/icons/MediDoorLogo.png",
         "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true,
-      "package": "com.abineshrp1234.WatchMovie"
+      }
     },
     "web": {
       "bundler": "metro",
@@ -45,10 +43,7 @@
       "typedRoutes": true
     },
     "extra": {
-      "router": {},
-      "eas": {
-        "projectId": "6b6ae952-6970-4b18-9e12-9460250e5d8c"
-      }
+      "router": {}
     }
   }
 }

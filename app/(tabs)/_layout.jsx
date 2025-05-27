@@ -54,7 +54,7 @@ const TabsLayout = () => {
           elevation: 10,
           height: 80 + insets.bottom,
           paddingHorizontal: 20,
-          paddingBottom: insets.bottom,
+          paddingBottom: insets.bottom ,
         },
         tabBarItemStyle: {
           height: "100%",
