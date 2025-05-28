@@ -4,7 +4,6 @@ import React from "react";
 import { Image, Pressable, Text, View } from "react-native";
 import { useNavigation } from "expo-router";
 const TopBar = () => {
-  const navigation = useNavigation();
   return (
     <View className="flex-row justify-between items-center mx-2 mb-5">
       <View className="flex-row items-center gap-3">

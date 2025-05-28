@@ -14,7 +14,6 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Profile = () => {
-  const navigation = useNavigation();
   return (
     <AppGradient colors={["#c5f0ec", "#eaf9f8", "#fafafa"]}>
       <ScrollView contentContainerStyle={{ paddingBottom: 50 }}>

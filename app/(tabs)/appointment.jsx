@@ -34,7 +34,7 @@ const Appointment = () => {
       exprerience: "10 years",
       image: images.doctor,
       about:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
     {
       id: 2,
@@ -46,7 +46,7 @@ const Appointment = () => {
       exprerience: "12 years",
       image: images.doctor,
       about:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
     {
       id: 3,
@@ -58,7 +58,7 @@ const Appointment = () => {
       exprerience: "8 years",
       image: images.doctor,
       about:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
     {
       id: 4,
@@ -70,7 +70,7 @@ const Appointment = () => {
       exprerience: "7 years",
       image: images.doctor,
       about:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
     {
       id: 5,
@@ -82,7 +82,7 @@ const Appointment = () => {
       exprerience: "15 years",
       image: images.doctor,
       about:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
     {
       id: 6,
@@ -94,7 +94,7 @@ const Appointment = () => {
       exprerience: "6 years",
       image: images.doctor,
       about:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
     {
       id: 7,
@@ -106,7 +106,7 @@ const Appointment = () => {
       exprerience: "9 years",
       image: images.doctor,
       about:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
     {
       id: 8,
@@ -118,7 +118,7 @@ const Appointment = () => {
       exprerience: "14 years",
       image: images.doctor,
       about:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since...",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
   ];
   const categoryFiltered =
@@ -144,9 +144,8 @@ const Appointment = () => {
   };
   const handleDoctorPress = (doctor) => {
     router.push({
-      pathname: "/doctor/[id]",
+      pathname: `/doctor/${doctor.id}`,
       params: {
-        id: doctor.id.toString(),
         doctor: JSON.stringify(doctor),
       },
     });

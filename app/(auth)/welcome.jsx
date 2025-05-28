@@ -1,7 +1,7 @@
 import AppGradient from "@/component/AppGradient";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from "expo-router";
 import React from "react";
 import { Image, Pressable, SafeAreaView, Text, View } from "react-native";
 const Welcome = () => {

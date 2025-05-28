@@ -1,9 +1,12 @@
 import AppGradient from "@/component/AppGradient";
+import AppointmentDetails from "@/component/AppointmentDetails";
 import SearchBox from "@/component/SearchBox";
 import TopBar from "@/component/TopBar";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { StatusBar } from "expo-status-bar";
+import { useEffect, useState } from "react";
 import {
   Dimensions,
   Image,
@@ -15,6 +18,23 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 const Home = () => {
   const { height, width } = Dimensions.get("screen");
+  const [appointment, setAppointment] = useState(null);
+
+  useEffect(() => {
+    const loadAppointment = async () => {
+      try {
+        const data = await AsyncStorage.getItem("appointment");
+        if (data) {
+          setAppointment(JSON.parse(data));
+        }
+      } catch (error) {
+        console.error("Failed to load appointment", error);
+      }
+    };
+
+    loadAppointment();
+  }, []);
+  console.log(appointment);
 
   return (
     <AppGradient colors={["#c5f0ec", "#fafafa", "#fafafa"]}>
@@ -64,39 +84,14 @@ const Home = () => {
                 boxShadow: "0px -2px 6px rgba(0, 0, 0, .1)",
               }}
             >
-              <Text className="font-semibold text-xl ">
-                Upcoming Appointment
-              </Text>
-
-              <View className="bg-primary py-5 px-5 rounded-3xl my-5">
-                <View className="flex-row justify-between items-center">
-                  <View className="flex-row gap-3 items-center">
-                    <Image source={images.docter} className="size-16" />
-                    <View className="flex flex-col">
-                      <Text className="text-white text-2xl font-semibold">
-                        Kalimuthu
-                      </Text>
-                      <Text className="text-white">Homeopathy</Text>
-                    </View>
-                  </View>
-                  <View>
-                    <Pressable className="bg-white rounded-full ">
-                      <Image source={icons.call} className="size-12" />
-                    </Pressable>
-                  </View>
-                </View>
-                <View className="flex-row  items-center gap-2 mt-3 px-3">
-                  <Image source={icons.calender} />
-                  <Text className="text-white font-semibold">
-                    Monday, 1 May
-                  </Text>
-                  <Image source={icons.clock} />
-                  <Text className="text-white font-semibold">
-                    09:00 - 10:30
-                  </Text>
-                </View>
-              </View>
-
+              {appointment && (
+                <AppointmentDetails
+                  Doctor={appointment?.doctor}
+                  date={appointment?.date}
+                  time={appointment?.time}
+                  dayFullName={appointment?.dayFullName}
+                />
+              )}
               <Text className="font-semibold text-xl ">
                 Medicine by Category
               </Text>

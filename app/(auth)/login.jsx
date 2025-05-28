@@ -1,9 +1,10 @@
 import AppGradient from "@/component/AppGradient";
 import { icons } from "@/constants/icons";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import { useNavigation } from "@react-navigation/native";
 import { router } from "expo-router";
 import React, { useState } from "react";
+import { useNavigation } from "expo-router";
+
 import {
   Image,
   KeyboardAvoidingView,
