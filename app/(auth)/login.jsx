@@ -21,7 +21,7 @@ const Login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   return (
-    <AppGradient colors={["#eafaf8", "#fff"]}>
+    <AppGradient colors={["#fff4d3", "#fff"]}>
       <SafeAreaView className="flex-1 px-2">
         <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -85,6 +85,7 @@ const Login = () => {
                   >
                     <Image
                       source={isPasswordVisible ? icons.eye_on : icons.eye_off}
+                      className="size-6"
                     />
                   </Pressable>
                 </View>

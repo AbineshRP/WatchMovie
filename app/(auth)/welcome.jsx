@@ -8,10 +8,10 @@ const Welcome = () => {
   const navigation = useNavigation();
   return (
     <>
-      <AppGradient colors={["#b2f0e8", "#fff"]}>
+      <AppGradient colors={["#fff4d3", "#fff"]}>
         <SafeAreaView style={{ flex: 1 }}>
           <View className="flex-1 items-center justify-center gap-5">
-            <Image source={images.loginHero} />
+            <Image source={images.loginHero} className="size-72"/>
             <View className="gap-2 items-center">
               <Text className="font-bold text-primary text-xl">
                 Welcome to Medi Door
@@ -32,7 +32,7 @@ const Welcome = () => {
               className="bg-white py-5 px-4 rounded-md flex-row items-center justify-center gap-2 shadow-sm"
               style={{ width: "90%" }}
             >
-              <Image source={icons.google} />
+              <Image source={icons.google} className="size-6"/>
 
               <Text className="text-black text-md text-center">
                 Continue with Google
@@ -42,7 +42,7 @@ const Welcome = () => {
               className="bg-white py-5 px-4 rounded-md flex-row items-center justify-center gap-2 shadow-sm"
               style={{ width: "90%" }}
             >
-              <Image source={icons.facebook} />
+              <Image source={icons.facebook} className="size-6"/>
 
               <Text className="text-black text-md text-center">
                 Continue with Facebook
@@ -52,7 +52,7 @@ const Welcome = () => {
               className="bg-white py-5 px-4 rounded-md flex-row items-center justify-center gap-2 shadow-sm"
               style={{ width: "90%" }}
             >
-              <Image source={icons.apple} />
+              <Image source={icons.apple} className="size-6"/>
 
               <Text className="text-black text-md text-center">
                 Continue with Apple

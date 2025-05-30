@@ -8,19 +8,20 @@ import {
 const TabIcon = ({ focused, icon, text }) => {
   if (focused) {
     return (
-      <View className="bg-[#117c6f] flex-1 rounded-full px-2 py-2 mt-5 flex-col items-center justify-center w-full min-w-[120px] min-h-16">
+      <View className="flex min-w-[120px]  flex-1 flex-col min-h-16 justify-center items-center mt-5">
         <Image
           source={icon}
-          tintColor={focused ? "white" : "black"}
-          className="size-7"
+          tintColor={focused ? "7f7f7f" : "7f7f7f"}
+          className="size-8"
         />
-        <Text className="font-bold text-white ml-2">{text}</Text>
+        <Text className="text-primary">{text}</Text>
       </View>
     );
   }
   return (
-    <View className="flex w-auto flex-col min-w-[120px] flex-1 px-3 min-h-16 justify-center items-center mt-5">
-      <Image source={icon} tintColor={"#117c6f"} className="size-6" />
+    <View className="flex  min-w-[120px] flex-1 flex-col min-h-16 justify-center items-center mt-5">
+      <Image source={icon} tintColor={"#7f7f7f"} className="size-8" />
+      <Text className="text-gray-500">{text}</Text>
     </View>
   );
 };
@@ -54,9 +55,12 @@ const TabsLayout = () => {
           elevation: 10,
           height: 80 + insets.bottom,
           paddingHorizontal: 20,
-          paddingBottom: insets.bottom ,
+          paddingBottom: insets.bottom,
         },
         tabBarItemStyle: {
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
           height: "100%",
           marginTop: "6%",
         },

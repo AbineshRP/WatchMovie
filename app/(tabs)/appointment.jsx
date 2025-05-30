@@ -2,18 +2,18 @@ import AppGradient from "@/component/AppGradient";
 import SearchBox from "@/component/SearchBox";
 import TopBar from "@/component/TopBar";
 import { images } from "@/constants/images";
-import React, { useState } from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { useRouter } from "expo-router";
+import React, { useState } from "react";
 import {
   FlatList,
   Image,
   Pressable,
+  SafeAreaView,
   ScrollView,
   Text,
   View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { useRouter } from "expo-router";
 const Appointment = () => {
   const router = useRouter();
   const [categorie, setCategories] = useState("all");
@@ -151,7 +151,7 @@ const Appointment = () => {
     });
   };
   return (
-    <AppGradient colors={["#c5f0ec", "#eaf9f8", "#fafafa"]}>
+    <AppGradient colors={["#fff4d3", "#fdfdfd"]}>
       <SafeAreaView className="flex-1">
         <View className="mb-2">
           <TopBar />

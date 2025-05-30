@@ -12,7 +12,7 @@ import {
   Text,
   View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native";
 
 const Medicines = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -108,7 +108,7 @@ const Medicines = () => {
   };
 
   return (
-    <AppGradient colors={["#eaf9f8", "#eaf9f8", "#fafafa"]}>
+    <AppGradient colors={["#fff4d3", "#fafafa", "#fafafa"]}>
       <SafeAreaView className="flex-1">
         <View className="mb-2">
           <TopBar />
@@ -288,10 +288,10 @@ const Medicines = () => {
                 </View>
               ) : (
                 <Pressable
-                  className="bg-secondary py-3 px-5 rounded-lg border-2 border-primary"
+                  className="bg-primary py-3 px-5 rounded-lg border-2 border-primary"
                   onPress={() => handleAddMedicine(item.id)}
                 >
-                  <Text className="text-primary font-bold">Add</Text>
+                  <Text className="text-white font-bold">Add</Text>
                 </Pressable>
               )}
             </View>

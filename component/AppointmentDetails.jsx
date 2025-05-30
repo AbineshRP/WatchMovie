@@ -23,14 +23,14 @@ const AppointmentDetails = ({ Doctor, time, date , dayFullName }) => {
             </View>
           </View>
           <Pressable className="bg-white rounded-full">
-            <Image source={icons.call} className="size-12" />
+            <Image source={icons.call} className="size-14" />
           </Pressable>
         </View>
         <View className="flex-row items-center gap-2 mt-3 px-3">
-          <Image source={icons.calender} />
+          <Image source={icons.calender}className="size-6" />
           <Text className="text-white font-semibold">{date}</Text>
           <Text className="text-white font-semibold">{dayFullName}</Text>
-          <Image source={icons.clock} />
+          <Image source={icons.clock} className="size-6"/>
           <Text className="text-white font-semibold">{time}</Text>
         </View>
       </View>

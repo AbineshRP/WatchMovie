@@ -11,11 +11,11 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native";
 
 const Profile = () => {
   return (
-    <AppGradient colors={["#c5f0ec", "#eaf9f8", "#fafafa"]}>
+    <AppGradient colors={["#fff4d3", "#fff4e2", "#fafafa"]}>
       <ScrollView contentContainerStyle={{ paddingBottom: 50 }}>
         <SafeAreaView className="flex-1">
           <StatusBar style="dark" />

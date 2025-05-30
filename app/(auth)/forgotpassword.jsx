@@ -17,7 +17,7 @@ const forgotpassword = () => {
   const navigation = useNavigation();
 
   return (
-    <AppGradient colors={["#eafaf8", "#fff"]}>
+    <AppGradient colors={["#fff4d3", "#fff"]}>
       <SafeAreaView className="flex-1 px-2">
         <View className="flex-1 px-3">
           <Pressable onPress={() => navigation.goBack()}>

@@ -21,7 +21,7 @@ const cart = () => {
             />
           </Pressable>
           <View className="flex-1 items-center justify-center">
-            <Image source={icons.Bigcart} />
+            <Image source={icons.Bigcart} className="size-40" />
             <Text className="text-xl font-semibold text-primary">
               Your Cart is empty
             </Text>

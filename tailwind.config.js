@@ -8,8 +8,8 @@ module.exports = {
         sans: ["Inter", "sans-serif"],
       },
       colors: {
-        primary: "#289c8e",
-        secondary: "#ceece8",
+        primary: "#f2a30f",
+        secondary: "#fff4d3",
         light: {
           100: "#eefbfa",
         },

@@ -7,6 +7,7 @@ import { images } from "@/constants/images";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
+import { SafeAreaView } from "react-native";
 import {
   Dimensions,
   Image,
@@ -15,7 +16,6 @@ import {
   Text,
   View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 const Home = () => {
   const { height, width } = Dimensions.get("screen");
   const [appointment, setAppointment] = useState(null);
@@ -34,10 +34,9 @@ const Home = () => {
 
     loadAppointment();
   }, []);
-  console.log(appointment);
 
   return (
-    <AppGradient colors={["#c5f0ec", "#fafafa", "#fafafa"]}>
+    <AppGradient colors={["#fff4d3", "#fafafa", "#fafafa"]}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 20 }}
@@ -61,8 +60,7 @@ const Home = () => {
               <View className="flex-row items-center gap-2">
                 <Image
                   source={icons.stethoscope}
-                  size={36}
-                  className="object-contain"
+                  className="object-contain size-20"
                 />
                 <View className="flex">
                   <Text className="font-semibold">Get The Right Medicine</Text>
@@ -77,7 +75,7 @@ const Home = () => {
             </View>
             {/***********************************************Appointment*****************************************/}
             <View
-              className="bg-light-100 mt-6 px-5 pt-8 pb-16"
+              className="bg-secondary mt-6 px-5 pt-8 pb-16"
               style={{
                 borderTopLeftRadius: 40,
                 borderTopRightRadius: 40,

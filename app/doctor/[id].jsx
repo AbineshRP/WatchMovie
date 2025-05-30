@@ -26,8 +26,6 @@ export default function DoctorProfile() {
   const [appointmentDay, setAppointmentDay] = useState(null);
   const [appointmenttime, setAppointmentTime] = useState("");
   const [readmore, setReadMore] = useState(false);
-  const [bookedDoctor, setBookedDoctor] = useState(null);
-  console.log(doctorData);
 
   const handleReadMore = () => {
     setReadMore(!readmore);
@@ -103,10 +101,10 @@ export default function DoctorProfile() {
                 width: "30%",
                 marginBottom: 12,
                 paddingVertical: 12,
-                backgroundColor: appointmenttime === time ? "#289c8e" : "#fff",
+                backgroundColor: appointmenttime === time ? "#f2a310" : "#fff",
                 borderRadius: 10,
                 borderWidth: appointmenttime === time ? 0 : 1.5,
-                borderColor: "#b3d3ce",
+                borderColor: "#f2a310",
                 alignItems: "center",
                 justifyContent: "center",
               }}
@@ -155,7 +153,7 @@ export default function DoctorProfile() {
   };
 
   return (
-    <AppGradient colors={["#e9f8f6", "#e9f8f6", "#fafafa"]}>
+    <AppGradient colors={["#fff", "#fff", "#fafafa"]}>
       <ScrollView>
         <SafeAreaView className="flex-1 px-2">
           <View className="flex-row  items-center justify-between mb-5">
@@ -173,7 +171,7 @@ export default function DoctorProfile() {
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{ paddingVertical: 25 }}
           >
-            <View className="bg-[#daf3f0] p-3 rounded-3xl border border-[#98d2cc] mt-5">
+            <View className="bg-secondary p-3 rounded-3xl border border-primary mt-5">
               <View className="flex-row items-center">
                 <Image
                   source={doctorData.image}
