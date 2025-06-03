@@ -2,21 +2,21 @@ import AppGradient from "@/component/AppGradient";
 import AppointmentDetails from "@/component/AppointmentDetails";
 import SearchBox from "@/component/SearchBox";
 import TopBar from "@/component/TopBar";
+import  useLocation  from "@/component/useLocation";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
-import { SafeAreaView } from "react-native";
 import {
   Dimensions,
   Image,
-  Pressable,
-  ScrollView,
+  Pressable, SafeAreaView, ScrollView,
   Text,
-  View,
+  View
 } from "react-native";
 const Home = () => {
+  const {longitude , latitude , errorMsg } = useLocation()
   const { height, width } = Dimensions.get("screen");
   const [appointment, setAppointment] = useState(null);
 
@@ -60,7 +60,7 @@ const Home = () => {
               <View className="flex-row items-center gap-2">
                 <Image
                   source={icons.stethoscope}
-                  className="object-contain size-20"
+                  className="object-contain size-12"
                 />
                 <View className="flex">
                   <Text className="font-semibold">Get The Right Medicine</Text>

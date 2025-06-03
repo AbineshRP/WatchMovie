@@ -32,7 +32,7 @@ const Appointment = () => {
       hospital: "Apollo Hospitals",
       rating: 4.7,
       exprerience: "10 years",
-      image: images.doctor,
+      image: images.doctor1,
       about:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
@@ -44,7 +44,7 @@ const Appointment = () => {
       hospital: "Fortis Health",
       rating: 4.6,
       exprerience: "12 years",
-      image: images.doctor,
+      image: images.doctor2,
       about:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
@@ -56,7 +56,7 @@ const Appointment = () => {
       hospital: "Clove Dental",
       rating: 4.8,
       exprerience: "8 years",
-      image: images.doctor,
+      image: images.doctor3,
       about:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
@@ -68,7 +68,7 @@ const Appointment = () => {
       hospital: "Rainbow Hospital",
       rating: 4.5,
       exprerience: "7 years",
-      image: images.doctor,
+      image: images.doctor4,
       about:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
@@ -80,7 +80,7 @@ const Appointment = () => {
       hospital: "AIIMS Delhi",
       rating: 4.9,
       exprerience: "15 years",
-      image: images.doctor,
+      image: images.doctor5,
       about:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
@@ -92,7 +92,7 @@ const Appointment = () => {
       hospital: "Skin City",
       rating: 4.4,
       exprerience: "6 years",
-      image: images.doctor,
+      image: images.doctor6,
       about:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },
@@ -116,7 +116,7 @@ const Appointment = () => {
       hospital: "Tata Memorial",
       rating: 4.8,
       exprerience: "14 years",
-      image: images.doctor,
+      image: images.doctor1,
       about:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since   is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ",
     },

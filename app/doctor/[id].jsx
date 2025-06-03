@@ -207,7 +207,7 @@ export default function DoctorProfile() {
                 </View>
               </View>
             </View>
-            <View className="bg-white p-4 rounded-2xl shadow-sm mt-5">
+            <View className="bg-white p-4 rounded-2xl border border-primary shadow-xl mt-5">
               <View className="flex-row justify-between px-4">
                 <Pressable
                   onPress={() => setActiveTab("about")}

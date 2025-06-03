@@ -4,11 +4,12 @@ import TopBar from "@/component/TopBar";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import React, { useState } from "react";
+import PrescriptionCard from "@/component/PrescriptionCard ";
 import {
   FlatList,
   Image,
   Pressable,
-  ScrollView,
+  // ScrollView,
   Text,
   View,
 } from "react-native";
@@ -23,56 +24,56 @@ const Medicines = () => {
       name: "Paracetamol",
       price: 150,
       type: "Tablet",
-      image: images.tablet,
+      image: images.paracetamol,
     },
     {
       id: 2,
       name: "Dolo",
       price: 250,
       type: "Tablet",
-      image: images.tablet,
+      image: images.dolo,
     },
     {
       id: 3,
       name: "amoxycillin",
       price: 150,
       type: "Tablet",
-      image: images.tablet,
+      image: images.amoxycillin,
     },
     {
       id: 4,
       name: "betadine",
       price: 100,
       type: "Tablet",
-      image: images.tablet,
+      image: images.betadine,
     },
     {
       id: 5,
       name: "dolo",
       price: 250,
       type: "Tablet",
-      image: images.tablet,
+      image: images.dolo,
     },
     {
       id: 6,
       name: "clopidogrel",
       price: 150,
       type: "Tablet",
-      image: images.tablet,
+      image: images.clopidogrel,
     },
     {
       id: 7,
       name: "fluconazole",
       price: 100,
       type: "Tablet",
-      image: images.tablet,
+      image: images.fluconazole,
     },
     {
       id: 8,
       name: "betadine",
       price: 170,
       type: "Tablet",
-      image: images.tablet,
+      image: images.betadinelq,
     },
   ];
 
@@ -237,29 +238,13 @@ const Medicines = () => {
           contentContainerStyle={{ paddingBottom: 70 }}
           ListHeaderComponent={() => (
             <>
-              <View className="bg-secondary my-5 rounded-xl p-5 flex flex-row items-center justify-between border-2 border-solid border-primary">
-                <View className="flex-row gap-2">
-                  <Image
-                    source={icons.stethoscope}
-                    className="size-14 object-contain"
-                  />
-                  <View className="flex">
-                    <Text className="font-semibold text-lg">
-                      Add a prescription
-                    </Text>
-                    <Text className="text-lg">to place your order</Text>
-                  </View>
-                </View>
-                <Pressable className="bg-white py-3 px-5 rounded-md">
-                  <Text className="text-primary font-bold">Upload</Text>
-                </Pressable>
-              </View>
+              <PrescriptionCard/>
             </>
           )}
           renderItem={({ item }) => (
             <View className="bg-white px-6 py-4 rounded-2xl flex flex-row items-end justify-between my-3">
               <View className="flex-row gap-3 justify-center items-center">
-                <Image source={images.tablet} className="size-28" />
+                <Image source={item.image} className="size-28" />
                 <View>
                   <Text className="font-bold text-lg capitalize">
                     {item.name}

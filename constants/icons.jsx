@@ -22,4 +22,7 @@ export const icons = {
   eye_off : require("@/assets/icons/eye-off.png"),
   eye_on : require("@/assets/icons/eye-open.png"),
   Bigcart : require("@/assets/icons/cart.png"),
+  logout : require("@/assets/icons/logout.png"),
+  rightArrow : require("@/assets/icons/right-arrow.png"),
+  BigBell : require("@/assets/icons/bigBell.png"),
 };

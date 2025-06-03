@@ -1,5 +1,6 @@
 import AppGradient from "@/component/AppGradient";
 import { images } from "@/constants/images";
+import { icons } from "@/constants/icons";
 import { router, useNavigation } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
@@ -139,10 +140,16 @@ const Profile = () => {
             onPress={() => router.replace("/(auth)/welcome")}
           >
             <View
-              className="bg-white py-5 px-5 rounded-lg shadow-sm mb-4"
+              className="bg-white flex-row items-center justify-between py-4 px-5 rounded-lg shadow-lg mb-4"
               style={{ width: "95%", alignSelf: "center" }}
             >
-              <Text className="text-gray-600 font-semibold">Log Out</Text>
+              <View className="flex-row items-center gap-3">
+                <Image source={icons.logout} className="size-10" />
+                <Text className="text-gray-600 text-lg font-semibold">
+                  Log Out
+                </Text>
+              </View>
+              <Image source={icons.rightArrow} className="size-8" />
             </View>
           </Pressable>
         </SafeAreaView>

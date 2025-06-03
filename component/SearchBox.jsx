@@ -6,13 +6,13 @@ const SearchBox = ({searchQuery , setSearchQuery }) => {
 
   return (
     <View
-      className="w-full p-5 mb-5 bg-white rounded-md flex-row items-center "
+      className="w-full px-3 py-4 mb-5 bg-white rounded-md flex-row items-center "
       style={{
         boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
       }}
     >
       <View className="flex flex-row items-center justify-between flex-1">
-        <Image source={icons.search} />
+        <Image source={icons.search} className = "size-6"/>
         <TextInput
           style={{
             backgroundColor: "#fff",
@@ -29,8 +29,8 @@ const SearchBox = ({searchQuery , setSearchQuery }) => {
            placeholderTextColor="#7e7e7e"
            keyboardType="default"
         />
-        <Image source={icons.line} style={{ marginHorizontal: 10 }} />
-        <Image source={icons.filter} />
+        <Image source={icons.line} style={{ marginHorizontal: 10 , width: 2 , height: 20 }}/>
+        <Image source={icons.filter} className = "size-6"/>
       </View>
     </View>
   );

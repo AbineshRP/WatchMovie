@@ -32,7 +32,7 @@ const Welcome = () => {
               className="bg-white py-5 px-4 rounded-md flex-row items-center justify-center gap-2 shadow-sm"
               style={{ width: "90%" }}
             >
-              <Image source={icons.google} className="size-6"/>
+              <Image source={icons.google} className="size-6" resizeMode="contain"/>
 
               <Text className="text-black text-md text-center">
                 Continue with Google
@@ -42,7 +42,7 @@ const Welcome = () => {
               className="bg-white py-5 px-4 rounded-md flex-row items-center justify-center gap-2 shadow-sm"
               style={{ width: "90%" }}
             >
-              <Image source={icons.facebook} className="size-6"/>
+              <Image source={icons.facebook} className="size-6" resizeMode="contain"/>
 
               <Text className="text-black text-md text-center">
                 Continue with Facebook
@@ -52,7 +52,7 @@ const Welcome = () => {
               className="bg-white py-5 px-4 rounded-md flex-row items-center justify-center gap-2 shadow-sm"
               style={{ width: "90%" }}
             >
-              <Image source={icons.apple} className="size-6"/>
+              <Image source={icons.apple} className="size-6" resizeMode="contain"/>
 
               <Text className="text-black text-md text-center">
                 Continue with Apple

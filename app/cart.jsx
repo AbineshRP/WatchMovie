@@ -9,7 +9,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 const cart = () => {
   const navigation = useNavigation();
   return (
-    <AppGradient colors={["#b4f1e9", "#fafafa", "#fafafa"]}>
+    <AppGradient colors={["#fff4d3", "#fafafa", "#fafafa"]}>
       <SafeAreaView className="flex-1">
         <View className="flex-1 px-4 py-4">
           <Pressable onPress={() => navigation.goBack()}>
@@ -21,7 +21,7 @@ const cart = () => {
             />
           </Pressable>
           <View className="flex-1 items-center justify-center">
-            <Image source={icons.Bigcart} className="size-40" />
+            <Image source={icons.Bigcart} className="size-40" resizeMode="contain" />
             <Text className="text-xl font-semibold text-primary">
               Your Cart is empty
             </Text>

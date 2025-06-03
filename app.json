@@ -14,7 +14,12 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+       "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to the camera to upload prescriptions.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to the photo library to upload prescriptions.",
+        "NSPhotoLibraryAddUsageDescription": "This app saves photos to your library."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -37,7 +42,15 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow MediDoor to access your location."
+        }
+      ],
+      "expo-camera",
+      "expo-image-picker"
     ],
     "experiments": {
       "typedRoutes": true
